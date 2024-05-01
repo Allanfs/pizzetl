@@ -13,7 +13,7 @@ gcloud functions deploy $FUNCTION \
   --runtime=python39 \
   --memory=512MB \
   --region=$REGION \
-  --source=./ports \
+  --source=. \
   --entry-point=$ENTRY_POINT \
   --trigger-bucket=$TRIGGER_BUCKET \
   --allow-unauthenticated \
