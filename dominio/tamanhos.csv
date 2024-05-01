@@ -1,0 +1,23 @@
+item_id,item_name,tamanho,num_sabores
+1012424,Pizza Pequena - 25cm  (1 sabor) c/ 4 fatias,PEQUENA,1
+48368,Pizza Média - 2 Sabores (30cm C/6 fatias),MEDIA,2
+311621,Pizza Média - 1 Sabor (30cm C/6 fatias),MEDIA,1
+1861739,Pizza Media 6 fat. - 2 sabores,MEDIA,2
+1276330,Calzone (pastel de pizza),MEDIA,1
+1861683,Pizza Media 6 fat. - 1 sabor,MEDIA,1
+48370,Pizza Grande - 2 Sabores (35cm C/ 8 fatias),GRANDE,2
+48369,Pizza Grande - 1 Sabor (35cm C/ 8 fatias),GRANDE,1
+1861748,Pizza Grande 8 fat. - 2 sabores,GRANDE,2
+1810728,Combo Legal = Pizza + Refri 1L,GRANDE,
+1861742,Pizza Grande 8 fat. 1 sabor,GRANDE,1
+1815050,Combo Feliz = Pizza + borda + refri 1L,GRANDE,
+1395833,Pizza G (8 Fat.) - Promoção,GRANDE,1
+1810728,Pizza Grande + guar.1L,GRANDE,
+48380,Pizza Gigante - 3 Sabores (40cm C/ 12 fatias),GIGANTE,3
+48372,Pizza Gigante - 2 Sabores (40cm C/ 12 fatias),GIGANTE,2
+311786,Pizza Gigante - 1 Sabor (40cm C/ 12 fatias),GIGANTE,1
+1861756,Pizza Gig. 12 fat. 2 sabores,GIGANTE,2
+1861751,Pizza Gig. 12 fat. 1 sabor,GIGANTE,1
+48375,Refrigerante 1L,,
+48377,Refrigerante - Lata,,
+2368281,"Combo Solteiro=Pizza Peq.+ guar.Lata=27,50",PEQUENA,1
