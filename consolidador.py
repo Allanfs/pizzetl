@@ -28,6 +28,8 @@ def consolidar_df_instadelivery(instadf: pd.DataFrame):
     instadf = instadelivery.obter_pedidos_validos(
         instadf)[insta_colunas_pedidos].drop_duplicates(subset=['id'])
 
+    instadf.id = instadf.id.astype(str)
+    instadf.client_id = instadf.client_id.astype(str)
     instadf.client_name = instadf.client_name.fillna('').astype(str)
     instadf.client_phone = instadf.client_phone.fillna(0).astype(int).astype(str)
     instadf.total = instadf.total.astype(float)
