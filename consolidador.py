@@ -7,7 +7,7 @@ from aplicativos import util
 
 def consolidar_instadelivery(arquivo):
     instadf = pd.read_csv(arquivo)
-    consolidar_df_instadelivery(instadf)
+    return consolidar_df_instadelivery(instadf)
 
 
 def consolidar_df_instadelivery(instadf: pd.DataFrame):
@@ -26,10 +26,10 @@ def consolidar_df_instadelivery(instadf: pd.DataFrame):
     ]
 
     instadf = instadelivery.obter_pedidos_validos(
-        instadf)[insta_colunas_pedidos].drop_duplicates(subset=['id']).fillna('')
+        instadf)[insta_colunas_pedidos].drop_duplicates(subset=['id'])
 
-    instadf.client_name = instadf.client_name.astype(str)
-    instadf.client_phone = instadf.client_phone.astype(str)
+    instadf.client_name = instadf.client_name.fillna('').astype(str)
+    instadf.client_phone = instadf.client_phone.fillna(0).astype(int).astype(str)
     instadf.total = instadf.total.astype(float)
     instadf.client_first_order = instadf.client_first_order.astype(bool)
     instadf.client_total_orders = instadf.client_total_orders.astype(int)
