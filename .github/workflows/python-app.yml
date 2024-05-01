@@ -5,31 +5,26 @@ name: Tratar Dados
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
-  
-env:
-  PYTHON_PROJ: 'cloud-func/tratar-dados/ports'
-  
-jobs:
 
+jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f $PYTHON_PROJ/requirements.txt ]; then pip install -r $PYTHON_PROJ/requirements.txt; fi
-    - name: Test with Unittest
-      run: |
-        cd $PYTHON_PROJ
-        python -m unittest
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Test with Unittest
+        run: |
+          python -m unittest
