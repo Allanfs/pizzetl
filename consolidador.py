@@ -92,9 +92,9 @@ def consolidar_df_querodelivery(querodf):
         .reset_index()
 
     querodf.pedidoId = querodf.pedidoId.astype(str)
-    querodf.usuarioId = querodf.usuarioId.astype(str)
-    querodf.usuarioNome = querodf.usuarioNome.astype(str)
-    querodf.celularUsuario = querodf.celularUsuario.astype('Int64').astype(str)
+    querodf.usuarioId = ""#querodf.usuarioId.astype(str)
+    querodf.usuarioNome = ""#querodf.usuarioNome.astype(str)
+    querodf.celularUsuario = ""#querodf.celularUsuario.astype('Int64').astype(str)
 
     querodf['client_first_order'] = querodf.usuarioQtdPedidosEntreguesPlace.apply(
         lambda x: x == 0)
