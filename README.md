@@ -71,7 +71,14 @@ python -m unittest discover aplicativos
 
 
 ## Deploy
-Utilizar o deploy.sh
+> DEPRECATED: Utilizar o deploy.sh
+
+Fazer deploy com Terraform:
+```sh
+cd terraform
+terraform apply
+# yes
+```
 
 # TODO: AUTOMATIZAR
 
