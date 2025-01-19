@@ -79,14 +79,3 @@ cd terraform
 terraform apply
 # yes
 ```
-
-# TODO: AUTOMATIZAR
-
-Utilizar Terraform para criar os recursos
-- criar service account
-- trigger no Scheduler
-- topico no pub/sub
-- bucket no cloud storage
-- secrets no secret manager
-- cloud functions
-- bigquery dataset
