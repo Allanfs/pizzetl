@@ -14,10 +14,19 @@ terraform {
 
 # Compactar projeto
 
-resource "archive_file" "init" {
+data "archive_file" "init" {
   type        = "zip"
   source_dir  = "${path.module}/.."
-  output_path = "${path.module}/project.zip"
+  output_path = "project.zip"
+  excludes = [
+    "**/*.zip",
+    "terraform",
+    "*.csv",
+    ".git",
+    "tmp",
+    ".venv",
+    ".github"
+  ]
 }
 
 # ------------------------------------------------------
@@ -33,7 +42,7 @@ resource "google_storage_bucket" "bucket" {
 resource "google_storage_bucket_object" "object" {
   name   = "pizzetl-function-source.zip"
   bucket = google_storage_bucket.bucket.name
-  source = archive_file.init.output_path
+  source = data.archive_file.init.output_path
 }
 
 resource "google_cloudfunctions2_function" "function" {
@@ -43,12 +52,9 @@ resource "google_cloudfunctions2_function" "function" {
   description = "Responsável por estruturar pedidos do instadelivery e querodelivery para o Bigquery"
 
   build_config {
-    runtime     = "python39"
-    entry_point = "consolidar_plataformas" # Set the entry point 
-    environment_variables = {
-      DESTINATION_TABLE_CONSOLIDADOR_PLATAFORMAS = var.destination_table_consolidador,
-      PROJECT_ID                                 = var.gcp_project
-    }
+    runtime               = "python39"
+    entry_point           = "consolidar_plataformas" # Set the entry point 
+    environment_variables = {}
 
     source {
       storage_source {
@@ -62,6 +68,10 @@ resource "google_cloudfunctions2_function" "function" {
     max_instance_count = 1
     available_memory   = "512M"
     timeout_seconds    = 60
+    environment_variables = {
+      DESTINATION_TABLE_CONSOLIDADOR_PLATAFORMAS = var.destination_table_consolidador,
+      PROJECT_ID                                 = var.gcp_project
+    }
   }
 
   event_trigger {
