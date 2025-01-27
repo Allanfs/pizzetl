@@ -55,7 +55,7 @@ def obter_forma_pagamento_usado_no_app(num):
         nome_forma_pagamento = CODIGO_APP_FORMA_PG_DF.loc[CODIGO_APP_FORMA_PG_DF['codigo_app']
                                                           == str(num), 'id_forma_pagamento'].values[0]
         return nome_forma_pagamento
-    print('forma pagamento nao encontrado ' + str(num))
+    # print('forma pagamento nao encontrado ' + str(num))
     return ''
 
 
