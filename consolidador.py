@@ -117,7 +117,7 @@ def consolidar_df_querodelivery(querodf):
         'total_pago_cliente': querodf.apply(querodelivery_aplicar_taxa_no_total_em_pagamento_tipo_credito, axis=1),
         'taxa_plataforma': querodf['precoTotal'].apply(querodelivery_aplicar_taxa_de_plataforma),
         'tipo_venda': querodf['tipo_venda'],
-        'qtdPedidosUsuario': querodf['usuarioQtdPedidosEntreguesPlace'],
+        'qtdPedidosUsuario': 0,
         'datahora': querodf['datahora'],
         'formaPagamento': querodf['formaPagamento'],
         'primeiroPedido': querodf['client_first_order'],
